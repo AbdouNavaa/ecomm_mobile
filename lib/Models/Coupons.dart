@@ -32,7 +32,7 @@ Future<Map<String, dynamic>> fetchCoupons(int page) async {
     headers: {
       'Authorization': 'Bearer $token',
     },
-    Uri.parse('http://192.168.141.73:8000/api/v1/coupons'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/coupons'),
   );
   if (response.statusCode == 200) {
     final Map<String, dynamic> jsonData = json.decode(response.body);
@@ -55,7 +55,7 @@ Future<Coupon> addCoupon(name, expire, discount) async {
     headers: {
       'Authorization': 'Bearer $token',
     },
-    Uri.parse('http://192.168.141.73:8000/api/v1/coupons'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/coupons'),
     body: {
       'name': name,
       'expire': expire,
@@ -78,7 +78,7 @@ Future<Coupon> updateCoupon(id,name, expire, discount) async {
     headers: {
       'Authorization': 'Bearer $token',
     },
-    Uri.parse('http://192.168.141.73:8000/api/v1/coupons/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/coupons/$id'),
     body: {
       'name': name,
       'expire': expire,
@@ -103,7 +103,7 @@ Future<void> deleteCoupon(id) async {
     headers: {
       'Authorization': 'Bearer $token',
     },
-    Uri.parse('http://192.168.141.73:8000/api/v1/coupons/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/coupons/$id'),
   );
   print(response.statusCode);
 

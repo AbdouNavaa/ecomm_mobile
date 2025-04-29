@@ -340,7 +340,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
       Body = {'name': name, 'email': email, 'phone': phone};
     }
     final response = await http.put(
-      Uri.parse('http://192.168.141.73:8000/api/v1/users/updateMe'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/users/updateMe'),
       headers: {
         'Authorization': 'Bearer $token',
       },
@@ -407,7 +407,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
     String? token = sharedPreferences.getString('token');
     // String? user = sharedPreferences.getString('user',JsonEncoder.withIndent('  '));
     final response = await http.put(
-      Uri.parse('http://192.168.141.73:8000/api/v1/users/changeMyPassword'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/users/changeMyPassword'),
       headers: {
         'Authorization': 'Bearer $token',
       },

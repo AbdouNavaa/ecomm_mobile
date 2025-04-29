@@ -134,7 +134,7 @@ class _ChoosePayMethoudPageState extends State<ChoosePayMethoudPage> {
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: Colors.black12),
                         ),
-                        child: Text('${widget.Price} جنيه',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w600),),
+                        child: Text('${widget.Price} MRU',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w600),),
                       ),
                       ElevatedButton(onPressed: (){
 
@@ -171,7 +171,7 @@ class _ChoosePayMethoudPageState extends State<ChoosePayMethoudPage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     final response = await http.post(
-      Uri.parse('http://192.168.141.73:8000/api/v1/orders/$id'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/orders/$id'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',

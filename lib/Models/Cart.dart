@@ -100,7 +100,7 @@ class Prod {
 Future<Map<String, dynamic>> fetchCart() async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
-  final response = await http.get(Uri.parse('http://192.168.141.73:8000/api/v1/cart'), headers: {
+  final response = await http.get(Uri.parse('http://192.168.65.73:8000/api/v1/cart'), headers: {
     'Authorization': 'Bearer $token',
   });
 

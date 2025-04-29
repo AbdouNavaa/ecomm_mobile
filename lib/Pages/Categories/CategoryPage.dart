@@ -104,7 +104,7 @@ class _CategoryPageState extends State<CategoryPage> {
                       itemBuilder: (context, index) {
                         final category = categories[index];
                         final imageUrl = category.imageUrl
-                            .replaceAll('127.0.0.1', '192.168.141.73');
+                            .replaceAll('127.0.0.1', '192.168.65.73');
                         return categories.length > 0
                             ? HomeCategory(
                                 category: category,
@@ -216,7 +216,7 @@ Container Pagination(page, changePage, numberOfPages) {
 
 Future<Map<String, dynamic>> fetchCategories(int page) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/categories?limit=4&page=$page'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/categories?limit=4&page=$page'),
   );
 
   if (response.statusCode == 200) {
@@ -234,7 +234,7 @@ Future<Map<String, dynamic>> fetchCategories(int page) async {
 
 Future<Category> fetchOneCategory(String id) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/categories/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/categories/$id'),
   );
 
   print(response.statusCode);

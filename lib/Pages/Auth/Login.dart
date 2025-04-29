@@ -435,7 +435,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
 
 Future<void> login(BuildContext context, String email, String password) async {
-  var url = "http://192.168.141.73:8000/api/v1/auth/login";
+  var url = "http://192.168.65.73:8000/api/v1/auth/login";
 
   try {
     final response = await http.post(

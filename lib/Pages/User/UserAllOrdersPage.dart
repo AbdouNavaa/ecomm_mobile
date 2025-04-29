@@ -123,7 +123,7 @@ class _UserAllOrdersPageState extends State<UserAllOrdersPage> {
 
                                             children: [
                                               Image.network(
-                                                cartItem.product.imageCover.replaceAll('http://127.0.0.1:8000', 'http://192.168.141.73:8000'),
+                                                cartItem.product.imageCover.replaceAll('http://127.0.0.1:8000', 'http://192.168.65.73:8000'),
                                                 height: 100,
                                                 width: 100,
                                                 fit: BoxFit.cover,
@@ -204,7 +204,7 @@ class _UserAllOrdersPageState extends State<UserAllOrdersPage> {
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text('طرقة الدفع كاش',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
-                                        Text('${order.totalOrderPrice.toStringAsFixed(0)} جنيه  ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+                                        Text('${order.totalOrderPrice.toStringAsFixed(0)} MRU  ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                                       ],
                                     )
                                                                    ],
@@ -228,7 +228,7 @@ class _UserAllOrdersPageState extends State<UserAllOrdersPage> {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String? token = sharedPreferences.getString('token');
     final response = await http.get(
-        Uri.parse('http://192.168.141.73:8000/api/v1/orders?limit=3&page=1'),
+        Uri.parse('http://192.168.65.73:8000/api/v1/orders?limit=3&page=1'),
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',

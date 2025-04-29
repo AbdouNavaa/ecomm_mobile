@@ -57,7 +57,7 @@ async {
 
   var request = http.MultipartRequest(
     'POST',
-    Uri.parse('http://192.168.141.73:8000/api/v1/brands'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/brands'),
   );
 
   // Ajouter le token dans l'en-tête

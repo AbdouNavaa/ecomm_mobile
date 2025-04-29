@@ -214,7 +214,7 @@ class _AdminAllProductsPageState extends State<AdminAllProductsPage> {
                             },
                             child: Image.network(
                               product.imageCover
-                                  .replaceAll('127.0.0.1', '192.168.141.73'),
+                                  .replaceAll('127.0.0.1', '192.168.65.73'),
                               height: 100,
                             ),
                           ),
@@ -256,7 +256,7 @@ class _AdminAllProductsPageState extends State<AdminAllProductsPage> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      'جنيه ',
+                                      'MRU ',
                                       style: TextStyle(
                                           color: Colors.black45,
                                           fontSize: 20,

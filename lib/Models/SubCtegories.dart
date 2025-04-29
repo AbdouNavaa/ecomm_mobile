@@ -27,7 +27,7 @@ class SubCategory {
 
 Future<Map<String, dynamic>> fetchSubCategories(int page) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/subcategories?limit=4&page=$page'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/subcategories?limit=4&page=$page'),
   );
 
   if (response.statusCode == 200) {
@@ -48,7 +48,7 @@ Future<List<SubCategory>> fetchOneSubCategory( ids) async {
 
   for (String id in ids) {
     final response = await http.get(
-      Uri.parse('http://192.168.141.73:8000/api/v1/subcategories/$id'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/subcategories/$id'),
     );
 
     if (response.statusCode == 200) {
@@ -68,7 +68,7 @@ Future<SubCategory> addSubCategory(String name,  String category, BuildContext c
 
 
   final response = await http.post(
-    Uri.parse('http://192.168.141.73:8000/api/v1/subcategories'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/subcategories'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',

@@ -163,7 +163,7 @@ String couponName = '';
                                                 Image.network(
                                                   item.product.imageCover
                                                       .replaceAll('127.0.0.1',
-                                                          '192.168.141.73'),
+                                                          '192.168.65.73'),
                                                   height: 150,
                                                   width: 100,
                                                 ),
@@ -447,7 +447,7 @@ String couponName = '';
                                                             FontWeight.bold),
                                                   ),
                                                   Text(
-                                                    'جنيه',
+                                                    'MRU',
                                                     style: TextStyle(
                                                         color: Colors.black,
                                                         fontSize: 18,
@@ -584,7 +584,7 @@ String couponName = '';
                                       children: [
                                         carts.data.totalAfterDiscount != 0
                                               ?Text(
-                                           '${carts.data.totalCartPrice}  جنيه ... بعد الخصم ${carts.data.totalAfterDiscount}',
+                                           '${carts.data.totalCartPrice}  MRU ... بعد الخصم ${carts.data.totalAfterDiscount}',
                                           style: TextStyle(
                                               color: CupertinoColors.systemGrey,
                                               fontSize: 17,
@@ -598,7 +598,7 @@ String couponName = '';
                                               fontSize: 17,
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Text('جنيه',
+                                        Text('MRU',
                                             style: TextStyle(
                                                 color:
                                                     CupertinoColors.systemGrey,
@@ -690,7 +690,7 @@ String couponName = '';
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     final response = await http.delete(
-      Uri.parse('http://192.168.141.73:8000/api/v1/cart/$id'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/cart/$id'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',
@@ -735,7 +735,7 @@ String couponName = '';
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     final response = await http.delete(
-      Uri.parse('http://192.168.141.73:8000/api/v1/cart'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/cart'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',
@@ -777,7 +777,7 @@ String couponName = '';
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     final response = await http.put(
-      Uri.parse('http://192.168.141.73:8000/api/v1/cart/$id'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/cart/$id'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',
@@ -823,7 +823,7 @@ String couponName = '';
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     final response = await http.put(
-      Uri.parse('http://192.168.141.73:8000/api/v1/cart/applyCoupon'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/cart/applyCoupon'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': 'Bearer $token',

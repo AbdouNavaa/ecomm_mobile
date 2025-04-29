@@ -106,7 +106,7 @@ class _ProductsByBrandState extends State<ProductsByBrand> {
                       itemBuilder: (context, index) {
                         final product = products[index];
                         final imageUrl = product.imageCover
-                            .replaceAll('127.0.0.1', '192.168.141.73');
+                            .replaceAll('127.0.0.1', '192.168.65.73');
                         return ProductCard(
                           product: product,
                           id: product.id,
@@ -183,7 +183,7 @@ class _ProductsByBrandState extends State<ProductsByBrand> {
 Future<Map<String, dynamic>> fetchProductsByBrand(int page, brandId) async {
   final response = await http.get(
     Uri.parse(
-        'http://192.168.141.73:8000/api/v1/products?limit=4&brand=${brandId}&page=${page}'),
+        'http://192.168.65.73:8000/api/v1/products?limit=4&brand=${brandId}&page=${page}'),
   );
 
   if (response.statusCode == 200) {

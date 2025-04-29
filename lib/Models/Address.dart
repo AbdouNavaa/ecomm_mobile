@@ -36,7 +36,7 @@ Future<Map<String, dynamic>> fetchAddress() async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/addresses'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/addresses'),
     headers: {
       'Authorization': 'Bearer $token',
     },
@@ -62,7 +62,7 @@ Future<Map<String, dynamic>> deleteAddress(id) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.delete(
-    Uri.parse('http://192.168.141.73:8000/api/v1/addresses/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/addresses/$id'),
     headers: {
       'Authorization': 'Bearer $token',
     },
@@ -87,7 +87,7 @@ Future<Map<String, dynamic>> addAddress(alias, details, phone) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.post(
-    Uri.parse('http://192.168.141.73:8000/api/v1/addresses'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/addresses'),
     headers: {
       'Authorization': 'Bearer $token',
     },
@@ -117,7 +117,7 @@ Future<Map<String, dynamic>> editAddress(id, alias, details, phone) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.put(
-    Uri.parse('http://192.168.141.73:8000/api/v1/addresses/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/addresses/$id'),
     headers: {
       'Authorization': 'Bearer $token',
     },

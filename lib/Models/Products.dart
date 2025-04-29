@@ -49,7 +49,7 @@ class Product {
 
 Future<Map<String, dynamic>> fetchOneProduct(int page, id) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/products/${id}'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products/${id}'),
   );
 
   print(response.statusCode);
@@ -67,7 +67,7 @@ Future<Map<String, dynamic>> fetchOneProduct(int page, id) async {
 }
 Future<Map<String, dynamic>> fetchLikeProduct(int page, id) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/products?category=${id}'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products?category=${id}'),
   );
 
   print(response.statusCode);
@@ -85,7 +85,7 @@ Future<Map<String, dynamic>> fetchLikeProduct(int page, id) async {
 }
 Future<Map<String, dynamic>> productSort(queryString) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/products?${queryString}'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products?${queryString}'),
   );
 
   print(response.statusCode);
@@ -160,7 +160,7 @@ Future<Map<String, dynamic>> favProduct() async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/wishlist'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/wishlist'),
     headers: {
       'Authorization': 'Bearer $token',
     },
@@ -185,7 +185,7 @@ void addFavProduct(String productId, BuildContext context) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.post(
-    Uri.parse('http://192.168.141.73:8000/api/v1/wishlist'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/wishlist'),
     headers: {
       'Authorization': 'Bearer $token',
     },
@@ -209,7 +209,7 @@ void removeFavProduct(String productId, BuildContext context) async {
   String? token = sharedPreferences.getString('token');
 
   final response = await http.delete(
-    Uri.parse('http://192.168.141.73:8000/api/v1/wishlist/$productId'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/wishlist/$productId'),
     headers: {
       'Authorization': 'Bearer $token',
     },
@@ -229,7 +229,7 @@ void deleteProduct(String productId, BuildContext context) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   String? token = sharedPreferences.getString('token');
   final response = await http.delete(
-    Uri.parse('http://192.168.141.73:8000/api/v1/products/$productId'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products/$productId'),
     headers: {
       'Authorization': 'Bearer $token',
     },

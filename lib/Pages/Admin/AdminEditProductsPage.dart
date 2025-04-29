@@ -159,7 +159,7 @@ Future<void> updateProduct({
 
   var request = http.MultipartRequest(
     'PUT',
-    Uri.parse('http://192.168.141.73:8000/api/v1/products/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products/$id'),
   );
 
   // Add authentication headers
@@ -557,7 +557,7 @@ request.fields['images'] = jsonEncode(imageUrls);
           children: [
             isNetworkImage
                 ? Image.network(
-                    allImages[index].replaceAll('127.0.0.1', '192.168.141.73'),
+                    allImages[index].replaceAll('127.0.0.1', '192.168.65.73'),
                     fit: BoxFit.cover,
                   )
                 : Image.file(

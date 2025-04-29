@@ -585,7 +585,7 @@ class _ProductsPageState extends State<ProductsPage> {
                                           final product = products[index];
                                           final imageUrl = product.imageCover
                                               .replaceAll(
-                                                  '127.0.0.1', '192.168.141.73');
+                                                  '127.0.0.1', '192.168.65.73');
                                           return Card(
                                             elevation: 10,
                                             color: Colors.white,
@@ -755,7 +755,7 @@ class _ProductsPageState extends State<ProductsPage> {
                                                       width: 5,
                                                     ),
                                                     Text(
-                                                      ' جنيه ',
+                                                      ' MRU ',
                                                       style: TextStyle(
                                                           fontSize: 15,
                                                           fontWeight:
@@ -898,7 +898,7 @@ class _ProductsPageState extends State<ProductsPage> {
 
 Future<Map<String, dynamic>> fetchProducts(int page) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/products?limit=6&page=$page'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products?limit=6&page=$page'),
   );
 
   if (response.statusCode == 200) {

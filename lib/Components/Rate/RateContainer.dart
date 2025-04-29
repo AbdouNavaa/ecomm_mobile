@@ -437,7 +437,7 @@ bool isEditing = false;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String? token = sharedPreferences.getString('token');
     final response = await http.post(
-      Uri.parse('http://192.168.141.73:8000/api/v1/reviews'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/reviews'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',
@@ -517,7 +517,7 @@ bool isEditing = false;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String? token = sharedPreferences.getString('token');
     final response = await http.put(
-      Uri.parse('http://192.168.141.73:8000/api/v1/reviews/$reviewId'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/reviews/$reviewId'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',
@@ -589,7 +589,7 @@ bool isEditing = false;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String? token = sharedPreferences.getString('token');
     final response = await http.delete(
-      Uri.parse('http://192.168.141.73:8000/api/v1/reviews/$id'),
+      Uri.parse('http://192.168.65.73:8000/api/v1/reviews/$id'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',

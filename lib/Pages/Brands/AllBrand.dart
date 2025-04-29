@@ -104,7 +104,7 @@ class _AllBrandPageState extends State<AllBrandPage> {
                       itemBuilder: (context, index) {
                         final brand = brands[index];
                         final imageUrl = brand.image
-                            .replaceAll('127.0.0.1', '192.168.141.73');
+                            .replaceAll('127.0.0.1', '192.168.65.73');
                         return InkWell(
                           onTap: () {
                             Navigator.push(
@@ -251,7 +251,7 @@ class _AllBrandPageState extends State<AllBrandPage> {
 
 Future<Map<String, dynamic>> fetchBrands(int page) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/brands?limit=8&page=$page'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/brands?limit=8&page=$page'),
   );
 
   if (response.statusCode == 200) {
@@ -269,7 +269,7 @@ Future<Map<String, dynamic>> fetchBrands(int page) async {
 
 Future<Brand> fetchOneBrand(String id) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/brands/$id'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/brands/$id'),
   );
 
   print(response.statusCode);

@@ -77,7 +77,7 @@ class _UserFavoriteProductsPageState extends State<UserFavoriteProductsPage> {
                             itemBuilder: (context, index) {
                               final product = products[index];
                               final imageUrl = product.imageCover
-                                  .replaceAll('127.0.0.1', '192.168.141.73');
+                                  .replaceAll('127.0.0.1', '192.168.65.73');
                               return ProductCard(
                                 id: product.id,
                                 image: imageUrl,

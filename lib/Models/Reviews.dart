@@ -34,7 +34,7 @@ class Review {
 
 Future<Map<String, dynamic>> fetchReviews(id, page, limit) async {
   final response = await http.get(
-    Uri.parse('http://192.168.141.73:8000/api/v1/products/${id}/reviews?page=${page}&limit=${limit}'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/products/${id}/reviews?page=${page}&limit=${limit}'),
   );
   print('Status ReviewCode: ${response.statusCode}');
 

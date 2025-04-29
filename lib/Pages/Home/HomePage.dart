@@ -153,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               itemBuilder: (context, index) {
                                 final category = categories[index];
                                 final imageUrl = category.imageUrl
-                                    .replaceAll('127.0.0.1', '192.168.141.73');
+                                    .replaceAll('127.0.0.1', '192.168.65.73');
 
                                 return HomeCategory(
                                   category: category,
@@ -205,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               itemBuilder: (context, index) {
                                 final product = products[index];
                                 final imageUrl = product.imageCover
-                                    .replaceAll('127.0.0.1', '192.168.141.73');
+                                    .replaceAll('127.0.0.1', '192.168.65.73');
 
                                 return ProductCard(
                                   product: product,
@@ -336,7 +336,7 @@ class _MyHomePageState extends State<MyHomePage> {
               isLoadingProd
                   ? Center(child: CircularProgressIndicator())
                   : SizedBox(
-                      height: 500, // Adjust the height as needed
+                      height: 530, // Adjust the height as needed
                       child: products.length > 0
                           ? GridView.builder(
                               padding: const EdgeInsets.all(10),
@@ -351,7 +351,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               itemBuilder: (context, index) {
                                 final product = products[index];
                                 final imageUrl = product.imageCover
-                                    .replaceAll('127.0.0.1', '192.168.141.73');
+                                    .replaceAll('127.0.0.1', '192.168.65.73');
 
                                 return ProductCard(
                                   product: product,
@@ -450,21 +450,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               Container(
-                height: 300,
+                height: 290,
                 child: brands.length > 0
                     ? GridView.builder(
                         padding: const EdgeInsets.all(10),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,
-                          childAspectRatio: 1.1,
+                          crossAxisSpacing: 5,
+                          mainAxisSpacing: 1,
+                          childAspectRatio: 1.3,
                         ),
                         itemCount: brands.length,
                         itemBuilder: (context, index) {
                           final brand = brands[index];
                           final imageUrl = brand.image
-                              .replaceAll('127.0.0.1', '192.168.141.73');
+                              .replaceAll('127.0.0.1', '192.168.65.73');
                           return InkWell(
                             onTap: () {
                               Navigator.push(

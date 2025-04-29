@@ -225,7 +225,7 @@ class _ProductDetalisPageState extends State<ProductDetalisPage> {
                                       )
                                     : Image.network(
                                         widget.product.imageCover.replaceAll(
-                                            '127.0.0.1', '192.168.141.73'),
+                                            '127.0.0.1', '192.168.65.73'),
                                         fit: BoxFit
                                             .contain, // ajuste l’image pour couvrir l’espace
                                         width: double.infinity,
@@ -256,7 +256,7 @@ class _ProductDetalisPageState extends State<ProductDetalisPage> {
                                             BorderRadius.circular(10.0),
                                         child: Image.network(
                                           image.replaceAll(
-                                              '127.0.0.1', '192.168.141.73'),
+                                              '127.0.0.1', '192.168.65.73'),
                                           fit: BoxFit
                                               .contain, // ajuste l’image pour couvrir l’espace
                                           width: double.infinity,
@@ -501,7 +501,7 @@ class _ProductDetalisPageState extends State<ProductDetalisPage> {
                                               )
                                             : SizedBox(),
                                         Text(
-                                          ' جنيه ',
+                                          ' MRU ',
                                           style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.w500),
@@ -592,7 +592,7 @@ class _ProductDetalisPageState extends State<ProductDetalisPage> {
                             itemBuilder: (context, index) {
                               final product = productsLike[index];
                               final imageUrl = product.imageCover
-                                  .replaceAll('127.0.0.1', '192.168.141.73');
+                                  .replaceAll('127.0.0.1', '192.168.65.73');
 
                               return InkWell(
                                   onTap: () {
@@ -684,7 +684,7 @@ Future<void> addtocart(id,color) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
   final response = await http.post(
-    Uri.parse('http://192.168.141.73:8000/api/v1/cart'),
+    Uri.parse('http://192.168.65.73:8000/api/v1/cart'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
       'Authorization': 'Bearer $token',

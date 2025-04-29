@@ -119,7 +119,7 @@ class ProductCard extends StatelessWidget {
                         )
                       : SizedBox(),
                   Text(
-                    ' جنيه ',
+                    ' MRU ',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                   ),
                 ],
